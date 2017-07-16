@@ -14,7 +14,7 @@ public class CarregaProduto {
 		SessionFactory factory = cfg.buildSessionFactory();
 		Session session = factory.openSession();
 		
-		Produto produto = (Produto) session.load(Produto.class, 1L);
+		Produto produto = (Produto) session.load(Produto.class, 11L);
 		
 		System.out.println("Nome do produto: " + produto.getNome());
 		session.close();

@@ -1,8 +1,6 @@
 package br.com.caelum.hibernate;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
 
 public class AdicionaProduto {
 	public static void main(String[] args) {
@@ -11,12 +9,14 @@ public class AdicionaProduto {
 		p.setDescricao("Hoje é um novo dia");
 		p.setPreco(100.50);
 		
-		AnnotationConfiguration cfg = new AnnotationConfiguration();
+		/*AnnotationConfiguration cfg = new AnnotationConfiguration();
 		cfg.addAnnotatedClass(Produto.class);
 		
 		SessionFactory factory = cfg.buildSessionFactory();
 		
-		Session session = factory.openSession();
+		Session session = factory.openSession();*/
+		
+		Session session = new HibernateUtil().getSession();
 		
 		session.beginTransaction();
 		session.save(p);
